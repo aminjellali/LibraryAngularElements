@@ -9,8 +9,7 @@
     "lint": "ng lint",
     "e2e": "ng e2e",
     "build:elements": "ng build --prod --output-hashing none && node build-script.js",
-    "build:ngx:elements": "ng build --prod --extra-webpack-config webpack.extra.js --output-hashing none --single-bundle true --project front && node copy-bundles.js",
-    "buildweb": "webpack --config prod.config.js"
+    "build:ngx:elements": "ng build --prod --extra-webpack-config webpack.extra.js --output-hashing none --single-bundle true --project front && node copy-bundles.js"
   },
   "private": true,
   "dependencies": {
