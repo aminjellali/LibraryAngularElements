@@ -1,0 +1,73 @@
+<mat-form-field class="example-full-width">
+  <input matInput placeholder="Library Name" [(ngModel)]="libraryName" (keyup.enter)="getAllBooksByLibraryName()">
+</mat-form-field>
+
+<mat-tab-group>
+  <mat-tab label="Magazines">
+    <div class="col-md-12">
+      <label> Library: {{libraryName}} list of magazines </label>
+      <table>
+        <thead>
+          <tr>
+             
+            <!-- <th *ngFor="let attribute of magazineAttributes"
+              #attribute>
+                {{attribute}}
+              </th>-->
+
+            <th>Id</th>
+            <th>Name</th>
+            <th>Author</th>
+            <th>Category</th>
+            <th>Number of pages</th>
+            <th>Price</th>
+            <th>Next Release Date</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let item of  magazinesTable">
+            <td>{{item.id}}</td>
+            <td>{{item.name}}</td>
+            <td>{{item.author.name}}</td>
+            <td>{{item.category}}</td>
+            <td>{{item.numberOfPages}}</td>
+            <td>{{item.price}}</td>
+            <td>{{item.nextReleaseDate}}</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <!-- Magazines table  end -->
+  </mat-tab>
+  <mat-tab label="Novels">
+    <!-- Novels table begin  -->
+    <div class="col-md-12" >
+      <label> Library: {{libraryName}} list of novels </label>
+      <table>
+        <thead>
+          <tr>
+            <th>Id</th>
+            <th>Name</th>
+            <th>Author</th>
+            <th>Category</th>
+            <th>Number of pages</th>
+            <th>Price</th>
+            <th>Story summary</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let item of novelsTable" >
+            <td>{{item.id}}</td>
+            <td>{{item.name}}</td>
+            <td>{{item.author.name}}</td>
+            <td>{{item.category}}</td>
+            <td>{{item.numberOfPages}}</td>
+            <td>{{item.price}}</td>
+            <td>{{item.storySummary}}</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <!-- Novels  table  end  -->
+  </mat-tab>
+</mat-tab-group>

@@ -1,0 +1,19 @@
+<mat-form-field class="example-full-width">
+  <input matInput placeholder="Library Name" [(ngModel)]="libraryName" (keyup.enter)="callSalesService()">
+</mat-form-field>
+
+
+<div>
+    <canvas baseChart *ngIf="authorize_plot"
+            [datasets]="salesData"
+            [labels]="salesLabels"
+            [options]="barChartOptions"
+            [chartType]="barChartType"
+            colors=#007bff
+            ></canvas>
+  </div>
+
+  <!--
+    (chartHover)="chartHovered($event)"
+    
+  -->
